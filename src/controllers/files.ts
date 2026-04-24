@@ -2,7 +2,8 @@ import type { Request, Response } from "express";
 import * as fileService from "../services/files.js";
 
 export const getFilesHandler = async (req: Request, res: Response) => {
-    const files = await fileService.getFiles(Number(req.query.listSize), Number(req.query.page));
+    const { listSize, page } = req.query;
+    const files = await fileService.getFiles(listSize ? Number(listSize) : undefined, page ? Number(req.query.page) : undefined);
     res.json(files);
 };
 
