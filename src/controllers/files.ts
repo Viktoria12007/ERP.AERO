@@ -1,5 +1,5 @@
-import { Request, Response } from "express";
-import * as fileService from "../services/files";
+import type { Request, Response } from "express";
+import * as fileService from "../services/files.js";
 
 export const getFilesHandler = async (req: Request, res: Response) => {
     const files = await fileService.getFiles(Number(req.query.listSize), Number(req.query.page));

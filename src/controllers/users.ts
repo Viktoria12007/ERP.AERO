@@ -1,5 +1,8 @@
 import { Request, Response } from 'express';
 import * as userService from '../services/users';
+import type { Request, Response } from 'express';
+import * as userService from '../services/users.js';
+import bcrypt from 'bcryptjs';
 
 export const getInfoUserHandler = async (req: Request, res: Response) => {
   try {
