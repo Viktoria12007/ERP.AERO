@@ -6,7 +6,7 @@ import bcrypt from 'bcryptjs';
 
 export const getInfoUserHandler = async (req: Request, res: Response) => {
   try {
-    const user = await userService.getUser(req.body);
+    const user = await userService.getUser();
     res.json(user.id);
   } catch (err) {
     // if (err.code === 'P2025') {
