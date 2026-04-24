@@ -11,9 +11,9 @@ export const getFileHandler = async (req: Request, res: Response) => {
     const file = await fileService.getFile(Number(req.params.id));
     res.json(file);
   } catch (err) {
-    if (err.code === 'P2025') {
-      res.status(404).json({ error: 'File not found' });
-    }
+    // if (err.code === 'P2025') {
+    //   res.status(404).json({ error: 'File not found' });
+    // }
   }
 };
 
@@ -43,9 +43,9 @@ export const updateFileHandler = async (req: Request, res: Response) => {
     const updatedFile = await fileService.updateFile(fileId, req.body);
     res.json(updatedFile);
   } catch (err) {
-    if (err.code === 'P2025') {
-      res.status(404).json({ error: 'File not found' });
-    }
+    // if (err.code === 'P2025') {
+    //   res.status(404).json({ error: 'File not found' });
+    // }
   }
 };
 
@@ -55,8 +55,8 @@ export const deleteFileHandler = async (req: Request, res: Response) => {
     await fileService.deleteFile(Number(file.id));
     res.json(file);
   } catch (err) {
-    if (err.code === 'P2025') {
-      res.status(404).json({ error: 'File not found' });
-    }
+    // if (err.code === 'P2025') {
+    //   res.status(404).json({ error: 'File not found' });
+    // }
   }
 };

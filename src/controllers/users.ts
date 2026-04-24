@@ -6,9 +6,9 @@ export const getInfoUserHandler = async (req: Request, res: Response) => {
     const user = await userService.getUser(req.body);
     res.json(user.id);
   } catch (err) {
-    if (err.code === 'P2025') {
-      res.status(404).json({ error: 'User not found' });
-    }
+    // if (err.code === 'P2025') {
+    //   res.status(404).json({ error: 'User not found' });
+    // }
   }
 };
 
