@@ -7,7 +7,13 @@
   "main": "dist/app.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "dev": "npx tsx src/app.ts",
+    "generate": "npx prisma generate",
+    "push": "npx prisma db push",
+    "pull": "npx prisma db pull",
+    "migrate": "npx prisma migrate dev",
+    "reset": "npx prisma migrate reset"
   },
   "dependencies": {
     "@prisma/adapter-mariadb": "^7.7.0",
