@@ -6,7 +6,7 @@ import {
   getFileHandler,
   getFilesHandler,
   updateFileHandler
-} from "../controllers/files";
+} from "../controllers/files.js";
 
 const router = Router();
 

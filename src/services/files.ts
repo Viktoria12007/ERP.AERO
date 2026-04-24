@@ -1,5 +1,5 @@
-import { prisma } from "../../prisma/client";
-import {FileCreateInput, FileUpdateInput} from "../generated/prisma/models/File";
+import { prisma } from "../../lib/prisma.js";
+import type { FileCreateInput, FileUpdateInput } from "../../generated/prisma/models/File";
 
 export const getFiles = async (listSize: number = 10, page: number = 1) => {
   return prisma.file.findMany({ take: listSize, skip: listSize * page });
