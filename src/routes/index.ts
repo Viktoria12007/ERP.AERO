@@ -1,6 +1,7 @@
 import { Router } from 'express';
-import userRouter from './users';
-import fileRouter from './files';
+import userRouter from './users.js';
+import fileRouter from './files.js';
+import { createUserHandler, loginHandler } from "../controllers/users.js";
 
 const router = Router();
 
