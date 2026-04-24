@@ -20,4 +20,4 @@ dist
 .env
 .env.deploy
 
-/src/generated/prisma
+/generated/prisma
