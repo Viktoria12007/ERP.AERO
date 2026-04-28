@@ -2,7 +2,7 @@ import { prisma } from "../../lib/prisma.js";
 import type { FileCreateInput, FileUpdateInput } from "../../generated/prisma/models/File";
 
 export const getFiles = async (listSize: number = 10, page: number = 1) => {
-  return prisma.file.findMany({ take: listSize, skip: listSize * page });
+  return prisma.file.findMany({ take: listSize, skip: listSize * (page - 1) });
 }
 
 export const getFile = async (id: number) => {
